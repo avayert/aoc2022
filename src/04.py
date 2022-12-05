@@ -8,10 +8,5 @@ lines = [
     for line in lines
 ]
 
-def chunks(iterable, *, n):
-    it = iter(iterable)
-    return iter(lambda: tuple(islice(it, n)), ())
-
-
 print('Part 1:', sum((a <= x and b >= y) or (x <= a and y >= b) for (a, b, x, y) in lines))
 print('Part 2:', sum(a <= y and x <= b for (a, b, x, y) in lines))
